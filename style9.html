@@ -1,4 +1,9 @@
-<style>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Nature Stil</title>
+  <style>
     body {
       background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb') center/cover;
       font-family: 'Georgia';
@@ -7,6 +12,13 @@
       padding: 50px;
       text-shadow: 1px 1px 3px #fff;
     }
-    </style>
-    <h1>Tabiatdan ilhom!</h1>
-    
+  </style>
+</head>
+<body>
+  <h1 id="dynamicText">Tabiatdan ilhom!</h1>
+  <script>
+    const text = new URLSearchParams(window.location.search).get("text");
+    if (text) document.getElementById("dynamicText").textContent = decodeURIComponent(text);
+  </script>
+</body>
+</html>

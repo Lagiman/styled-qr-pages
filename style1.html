@@ -2,22 +2,23 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Olovli QR Matn</title>
+  <title>Olovli Stil</title>
   <style>
     body {
-      font-family: 'Comic Sans MS';
       background: linear-gradient(to right, #ff512f, #dd2476);
+      font-family: 'Comic Sans MS';
       color: white;
       text-align: center;
       padding: 50px;
     }
-    h1 {
-      font-size: 2em;
-      text-shadow: 2px 2px 4px #000;
-    }
+    h1 { text-shadow: 2px 2px 5px #000; }
   </style>
 </head>
 <body>
-  <h1>Xush kelibsiz, bu stilga ega QR sahifadir!</h1>
+  <h1 id="dynamicText">Olovli salom!</h1>
+  <script>
+    const text = new URLSearchParams(window.location.search).get("text");
+    if (text) document.getElementById("dynamicText").textContent = decodeURIComponent(text);
+  </script>
 </body>
 </html>

@@ -1,4 +1,9 @@
-<style>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Neumorphism Stil</title>
+  <style>
     body {
       background-color: #e0e0e0;
       font-family: 'Segoe UI', sans-serif;
@@ -7,6 +12,13 @@
       color: #333;
       box-shadow: inset 5px 5px 10px #bebebe, inset -5px -5px 10px #ffffff;
     }
-    </style>
-    <h1>Minimalizm go‘zalligi</h1>
-    
+  </style>
+</head>
+<body>
+  <h1 id="dynamicText">Minimalizm go‘zalligi</h1>
+  <script>
+    const text = new URLSearchParams(window.location.search).get("text");
+    if (text) document.getElementById("dynamicText").textContent = decodeURIComponent(text);
+  </script>
+</body>
+</html>

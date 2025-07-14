@@ -1,4 +1,9 @@
-<style>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Gradient Stil</title>
+  <style>
     body {
       background-color: #f0f0f0;
       font-family: 'Arial', sans-serif;
@@ -8,9 +13,15 @@
     h1 {
       background: linear-gradient(to right, #f12711, #f5af19);
       -webkit-background-clip: text;
-      background-clip: text;
       color: transparent;
     }
-    </style>
-    <h1>Rangli xabar!</h1>
-    
+  </style>
+</head>
+<body>
+  <h1 id="dynamicText">Rangli xabar!</h1>
+  <script>
+    const text = new URLSearchParams(window.location.search).get("text");
+    if (text) document.getElementById("dynamicText").textContent = decodeURIComponent(text);
+  </script>
+</body>
+</html>

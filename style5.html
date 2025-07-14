@@ -1,12 +1,24 @@
-<style>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Galaxy Stil</title>
+  <style>
     body {
       background: url('https://images.unsplash.com/photo-1557682224-5b8590cd9ec5') center/cover;
-      color: #ffffff;
-      text-align: center;
       font-family: 'Orbitron', sans-serif;
+      color: #fff;
+      text-align: center;
       padding: 50px;
       text-shadow: 1px 1px 3px #000;
     }
-    </style>
-    <h1>Koinotdan salom!</h1>
-    
+  </style>
+</head>
+<body>
+  <h1 id="dynamicText">Koinotdan salom!</h1>
+  <script>
+    const text = new URLSearchParams(window.location.search).get("text");
+    if (text) document.getElementById("dynamicText").textContent = decodeURIComponent(text);
+  </script>
+</body>
+</html>

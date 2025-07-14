@@ -1,4 +1,9 @@
-<style>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Candy Stil</title>
+  <style>
     body {
       background: radial-gradient(circle, #ffccff, #ccffff);
       font-family: 'Verdana';
@@ -6,6 +11,13 @@
       text-align: center;
       padding: 50px;
     }
-    </style>
-    <h1>Shirin tabassum uchun!</h1>
-    
+  </style>
+</head>
+<body>
+  <h1 id="dynamicText">Shirin tabassum!</h1>
+  <script>
+    const text = new URLSearchParams(window.location.search).get("text");
+    if (text) document.getElementById("dynamicText").textContent = decodeURIComponent(text);
+  </script>
+</body>
+</html>

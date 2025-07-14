@@ -1,11 +1,25 @@
-<style>
-    body {
-      background-color: #111;
-      font-family: 'Press Start 2P', cursive;
-      color: #fefefe;
-      text-align: center;
-      padding: 50px;
-    }
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Retro Stil</title>
+    <style>
+        body {
+            background-color: #111;
+            font-family: 'Press Start 2P', cursive;
+            color: #fefefe;
+            text-align: center;
+            padding: 50px;
+        }
     </style>
-    <h1>80-yillardan salom!</h1>
-    
+</head>
+<body>
+    <h1 id="dynamicText">80-yillardan salom!</h1>
+    <script>
+        const text = new URLSearchParams(window.location.search).get("text");
+        if (text) {
+            document.getElementById("dynamicText").textContent = text;
+        }
+    </script>
+</body>
+</html>
